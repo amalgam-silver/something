@@ -7,7 +7,7 @@
 using namespace std;
 
 #define random(x)	(rand() % x)
-#define LEN	100
+#define LEN	10000
 //#define DEBUG
 
 int main()
@@ -22,16 +22,14 @@ int main()
 		buf[i] = random(1000);
 #ifdef DEBUG
 		cout << buf[i] << ' ';
+		if (i == LEN - 1)	cout << endl;
 #endif
 	}
-#ifdef DEBUG
-	cout << endl;
-#endif
 
-	printHeap(buf, LEN);
 	/* Sorting... */
 //	cout << SortBubbleUpd2(buf, LEN) << endl;
 //	cout << SortSelectionUpd1(buf, LEN) << endl;
+	cout << sortHeap(buf, LEN) << endl;
 
 #ifdef DEBUG
 	/* Printing... */
