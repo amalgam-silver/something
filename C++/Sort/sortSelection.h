@@ -1,13 +1,5 @@
-template <class T>
-void MySwap(T &a, T &b)
-{
-	if (a != b)
-	{
-		a = a + b;
-		b = a - b;
-		a = a - b;
-	}
-}
+#ifndef SORT_SELECTION
+#define SORT_SELECTION
 
 template <class T>
 int SortSelection(T *buf, int len)
@@ -58,3 +50,4 @@ int SortSelectionUpd1(T *buf, int len)
 	return i;
 }
 
+#endif

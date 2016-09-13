@@ -1,13 +1,5 @@
-template <class T>
-void swap(T &a, T &b)
-{
-	if (a != b)
-	{
-		a = a + b;
-		b = a - b;
-		a = a - b;
-	}
-}
+#ifndef _SORT_HEAP
+#define _SORT_HEAP
 
 template <class T>
 void adjustHeap(T *a, int i, int len)
@@ -22,7 +14,7 @@ void adjustHeap(T *a, int i, int len)
 		}
 		if (a[child] > a[i])
 		{
-			swap(a[child], a[i]);
+			mySwap(a[child], a[i]);
 			i = child;
 			child = i * 2 + 1;
 		}
@@ -43,12 +35,12 @@ void buildHeap(T *a, int len)
 }
 
 template <class T>
-int sortHeap(T *a, int len)
+int SortHeap(T *a, int len)
 {
 	buildHeap(a, len);
 	for (int i = len - 1; i > 0; i--)
 	{
-		swap(a[0], a[i]);
+		mySwap(a[0], a[i]);
 		adjustHeap(a, 0, i);
 	}
 	return 0;
@@ -117,3 +109,5 @@ void printHeap(T *a, int s, int len)
 		printHeap(a, childRight, len);
 	}
 }
+
+#endif

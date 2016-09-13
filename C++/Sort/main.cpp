@@ -4,11 +4,14 @@
 #include "sortBubble.h"
 #include "sortSelection.h"
 #include "sortHeap.h"
+#include "sortQuick.h"
+#include "sortInsert.h"
+#include "sortMerge.h"
 using namespace std;
 
 #define random(x)	(rand() % x)
 #define LEN	10000
-//#define DEBUG
+#define DEBUG
 
 int main()
 {
@@ -27,13 +30,17 @@ int main()
 	}
 
 	/* Sorting... */
+//	cout << SortInsert(buf, LEN) << endl;
 //	cout << SortBubbleUpd2(buf, LEN) << endl;
 //	cout << SortSelectionUpd1(buf, LEN) << endl;
-	cout << sortHeap(buf, LEN) << endl;
+//	cout << SortHeap(buf, LEN) << endl;
+//	cout << SortQuickUpd1(buf, LEN) << endl;
+	int res[LEN];
+	cout << SortMerge(buf, res, LEN) << endl;
 
 #ifdef DEBUG
 	/* Printing... */
 	for (int i = 0; i < LEN; i++)
-		cout << buf[i] << ' ';
+		cout << res[i] << ' ';
 #endif
 }

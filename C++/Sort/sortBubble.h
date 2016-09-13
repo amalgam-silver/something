@@ -1,3 +1,6 @@
+#ifndef _SORT_BUBBLE
+#define _SORT_BUBBLE
+
 template<class T>
 void mySwap(T &a, T &b)
 {
@@ -75,3 +78,5 @@ int SortBubbleUpd2(T *buf, int len)
 	}
 	return cnt;
 }
+
+#endif
